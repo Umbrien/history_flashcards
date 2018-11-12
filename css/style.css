@@ -57,8 +57,12 @@ body {
 	background: #ff6969;
 }
 
-.front .card-body .card-text {
-	font-size: 90px;
+#frontCardText {
+	font-size: 30px;
+}
+
+#backCardDate {
+	font-size: 60px;
 }
 
 .back {
@@ -78,14 +82,14 @@ body {
 
 .card-title-number {
 	position: absolute;
-	top: 3px;
+	bottom: 3px;
 	right: 19px;
 	font-size: 58px;
 	color: rgba(74,74,74,.6);
 }
 
 .card-text {
-	font-size: 2rem;
+	font-size: 1rem;
 }
 
 
@@ -122,4 +126,85 @@ button:hover {
 
 .btn-next {
 	margin-bottom: 2rem;
+}
+
+
+@media only screen and (min-height: 750px) {
+	#first-container {
+		margin-top: 70px;
+	}
+}
+
+@media only screen and (min-height: 950px) {
+	#first-container {
+		margin-top: 170px;
+	}
+}
+
+@media screen and (max-width: 990px) {
+	#frontCardTheme {
+		font-size: 20px;
+		width: 500px;
+	}
+	#backCardTheme {
+		font-size: 20px;
+		width: 350px;
+	}
+}
+
+
+@media screen and (max-width: 770px) {
+	#frontCardTheme {
+		font-size: 15px;
+		width: 350px;
+	}
+	#backCardTheme {
+		font-size: 15px;
+		width: 350px;
+	}
+}
+
+@media screen and (max-width: 540px) {
+	#frontCardTheme {
+		font-size: 15px;
+		width: 300px;
+	}
+	#backCardTheme {
+		font-size: 15px;
+		width: 300px;
+	}
+}
+
+@media screen and (max-width: 375px) {
+	#frontCardTheme {
+		font-size: 12px;
+		width: 230px;
+	}
+	#frontCardNumber {
+		font-size: 35px;
+	}
+	#backCardTheme {
+		font-size: 12px;
+		width: 230px;
+	}
+	#backCardNumber {
+		font-size: 35px;
+	}
+}
+
+@media screen and (max-width: 320px) {
+	#frontCardTheme {
+		font-size: 10px;
+		width: 200px;
+	}
+	#frontCardNumber {
+		font-size: 30px;
+	}
+	#backCardTheme {
+		font-size: 10px;
+		width: 200px;
+	}
+	#backCardNumber {
+		font-size: 30px;
+	}
 }
