@@ -140,3 +140,25 @@ button:hover {
 		margin-top: 170px;
 	}
 }
+
+@media screen and (max-width: 800px) {
+	#frontCardTheme {
+		font-size: 15px;
+		width: 350px;
+	}
+	#backCardTheme {
+		font-size: 15px;
+		width: 350px;
+	}
+}
+
+@media screen and (max-width: 540px) {
+	#frontCardTheme {
+		font-size: 15px;
+		width: 300px;
+	}
+	#backCardTheme {
+		font-size: 15px;
+		width: 300px;
+	}
+}
