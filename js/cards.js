@@ -22,6 +22,7 @@ new cardMaker("legends", 2, 1969, "Народився Лінус Торваль�
 new cardMaker("legends", 3, 1984, "Народився Марк Цукерберг")
 ]
 
+cardsArray = randArr(cardsArray);
 
 class Queue{
 	constructor() {
@@ -51,16 +52,36 @@ class Queue{
 	}
 }
 
+function randomInteger(min, max) {
+    var rand = min - 0.5 + Math.random() * (max - min + 1)
+    rand = Math.round(rand);
+    return rand;
+  }
+
+function randArr(list){
+	l = [];
+	h = 0;
+	iter = list.length
+	for (i = 0; i < iter; i++){
+		h = randomInteger(0, list.length - 1);
+		console.log(h);
+		console.log(list[h]);
+		l.push(list[h]);
+		list.splice(h,1);
+	}
+	return l
+}
+
 cardsQueue = new Queue;
 
 cardsArray.forEach(function(item, i, cardsArray) {
 	cardsQueue.enqueue(item);
 });
 
-
-document.getElementById("h1-title").innerText = "Карток залишилось: " + cardsQueue.items.length;
+document.getElementById("h1-title").innerText = "Карток залишилось: " + cardsQueue.items.length;	
 
 function nextCard() {
+	document.getElementById("removeCardButton").removeAttribute("disabled");
 	if (cardsQueue.is_empty()) {
 		document.getElementById("frontCardText").innerText = "Ви запам'ятали усі картки";
 		document.getElementById("backCardDate").innerText = "Ви запам'ятали усі картки"

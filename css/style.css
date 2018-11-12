@@ -127,3 +127,16 @@ button:hover {
 .btn-next {
 	margin-bottom: 2rem;
 }
+
+
+@media only screen and (min-height: 750px) {
+	#first-container {
+		margin-top: 70px;
+	}
+}
+
+@media only screen and (min-height: 950px) {
+	#first-container {
+		margin-top: 170px;
+	}
+}

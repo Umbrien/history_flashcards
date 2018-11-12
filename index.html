@@ -14,7 +14,7 @@
 </head>
 
 <body>
-	<div class="container">
+	<div id="first-container" class="container">
 		<div class="row">
 			<div class="col-sm">
 				<h1 id="h1-title" onclick="changeH1TitleDescriptionDisplay()"></h1>
@@ -37,7 +37,7 @@
 					<div class="card-body">
 						<h5 id="backCardTheme" class="card-title"></h5>
 						<h5 id="backCardNumber" class="card-title card-title-number"></h5>
-						<p id="backCardDate" class="card-text text-center">Натисніть "Наступна" для початку гри</p>
+						<p id="backCardDate" class="card-text text-center">Натисніть "Наступна"</p>
 					</div>
 				</div>
 			</div>
@@ -47,7 +47,7 @@
 	<div class="container">
 		<div class="row button-row">
 			<div class="col-sm">
-				<button type="button" id="removeCardButton" class="btn btn-success" onclick="removeCard()">Запам'ятав</button>
+				<button type="button" id="removeCardButton" class="btn btn-success" onclick="removeCard()" disabled>Запам'ятав</button>
 			</div>
 			<div class="col-sm">
 				<button type="button" id="nextCardButton" class="btn btn-info btn-next" onclick="nextCard()">Наступна</button>
