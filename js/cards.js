@@ -57,6 +57,9 @@ cardsArray.forEach(function(item, i, cardsArray) {
 	cardsQueue.enqueue(item);
 });
 
+
+document.getElementById("h1-title").innerText = "Карток залишилось: " + cardsQueue.items.length;
+
 function nextCard() {
 	if (cardsQueue.is_empty()) {
 		document.getElementById("frontCardText").innerText = "Ви запам'ятали усі картки";
@@ -66,6 +69,7 @@ function nextCard() {
 		document.getElementById("removeCardButton").style.display = "none";
 		document.getElementById("nextCardButton").style.display = "none"
 	}
+	document.getElementById("h1-title").innerText = "Карток залишилось: " + cardsQueue.items.length;
 	lastItem = cardsQueue.dequeue();
 	document.getElementById("frontCardTheme").innerText = lastItem.theme;
 	document.getElementById("frontCardNumber").innerText = "#" + lastItem.number;
