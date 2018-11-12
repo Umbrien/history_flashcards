@@ -142,69 +142,43 @@ button:hover {
 }
 
 @media screen and (max-width: 990px) {
-	#frontCardTheme {
+	#frontCardTheme, #backCardTheme {
 		font-size: 20px;
 		width: 500px;
-	}
-	#backCardTheme {
-		font-size: 20px;
-		width: 350px;
 	}
 }
 
 
 @media screen and (max-width: 770px) {
-	#frontCardTheme {
-		font-size: 15px;
-		width: 350px;
-	}
-	#backCardTheme {
+	#frontCardTheme, #backCardTheme {
 		font-size: 15px;
 		width: 350px;
 	}
 }
 
 @media screen and (max-width: 540px) {
-	#frontCardTheme {
-		font-size: 15px;
-		width: 300px;
-	}
-	#backCardTheme {
+	#frontCardTheme, #backCardTheme {
 		font-size: 15px;
 		width: 300px;
 	}
 }
 
 @media screen and (max-width: 375px) {
-	#frontCardTheme {
+	#frontCardTheme, #backCardTheme {
 		font-size: 12px;
 		width: 230px;
 	}
-	#frontCardNumber {
-		font-size: 35px;
-	}
-	#backCardTheme {
-		font-size: 12px;
-		width: 230px;
-	}
-	#backCardNumber {
+	#frontCardNumber, #backCardNumber {
 		font-size: 35px;
 	}
 }
 
 @media screen and (max-width: 320px) {
-	#frontCardTheme {
+	#frontCardTheme, #backCardTheme {
 		font-size: 10px;
 		width: 200px;
 	}
-	#frontCardNumber {
-		font-size: 30px;
-	}
-	#backCardTheme {
-		font-size: 10px;
-		width: 200px;
-	}
-	#backCardNumber {
+	#frontCardNumber, #backCardNumber {
 		font-size: 30px;
 	}
 }
