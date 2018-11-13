@@ -1,3 +1,18 @@
+/*
+
+	red - #f80c12;
+	orange - #ff9933
+	green - #69d025
+	blue - #12bdb9
+	darkBlue - #4444dd
+	purple - #442299
+	cherry - #9E1538
+	smoky - #7E7A7A
+	violet - #EA2AEC
+
+*/
+
+
 body {
 	background-color: #322727;
 	color: #CCC;
@@ -16,7 +31,17 @@ body {
 	display: none;
 }
 
+.bigHeader {
+	width: 100%;
+}
 
+.bigHeaderDiv {
+	margin-bottom: 3rem;
+}
+
+.container-margin-bottom {
+	margin-bottom: 15rem;
+}
 
 
 
@@ -221,11 +246,6 @@ button:hover {
 
 #form-container {
 	margin-top: 20rem;
-	margin-bottom: 10rem;
-}
-
-#form-container .row h1 {
-	width: 100%;
 }
 
 #form-container .row div {
@@ -234,4 +254,66 @@ button:hover {
 
 #deleteAllCardsModal {
 	color: #ff2929;
+}
+
+
+
+
+
+/*************************************/
+/**********		table		**********/
+/*************************************/
+
+.table-dark {
+	background-color: #715e5e;
+	border-color: #483c3c;
+	border-radius: 8px;
+	box-shadow: 0 6px 0 #4e4040;
+}
+
+
+/*
+
+	red - #f80c12;
+	orange - #ff9933
+	yellow - #d0c310
+	green - #69d025
+	blue - #12bdb9
+	darkBlue - #4444dd
+	purple - #442299
+	cherry - #9E1538
+	smoky - #7E7A7A
+	violet - #EA2AEC
+
+*/
+
+.bgRainbowRed {
+	background-color: #f80c12;
+}
+.bgRainbowOrange {
+	background-color: #ff9933;
+}
+.bgRainbowYellow {
+	background-color: #d0c310;
+}
+.bgRainbowGreen {
+	background-color: #69d025;
+}
+.bgRainbowBlue {
+	background-color: #12bdb9
+}
+.bgRainbowDarkBlue {
+	background-color: #4444dd;
+}
+.bgRainbowPurple {
+	background-color: #442299;
+}
+.bgRainbowCherry {
+	background-color: #9E1538;
+}
+.bgRainbowSmoky {
+	background-color: #7E7A7A;
+}
+.bgRainbowViolet {
+	background-color: #EA2AEC;
 }
