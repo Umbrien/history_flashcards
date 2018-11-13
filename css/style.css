@@ -172,6 +172,12 @@ body {
 .btn-info:hover {
 	box-shadow: 0 2px 0 #1575a7;
 }
+.btn-secondary {
+	box-shadow: 0 5px 0 #3f4347;
+}
+.btn-secondary:hover {
+	box-shadow: 0 2px 0 #3f4347;
+}
 button:hover {
 	transform: translateY(3px);
 }
