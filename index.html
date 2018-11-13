@@ -47,13 +47,72 @@
 	<div class="container">
 		<div class="row button-row">
 			<div class="col-sm">
-				<button type="button" id="removeCardButton" class="btn btn-success" onclick="removeCard()" disabled>Запам'ятав</button>
+				<button type="button" id="removeCardButton" class="btn btn-success btn-lg" onclick="removeCard()" disabled>Запам'ятав</button>
 			</div>
 			<div class="col-sm">
-				<button type="button" id="nextCardButton" class="btn btn-info btn-next" onclick="nextCard()">Наступна</button>
+				<button type="button" id="nextCardButton" class="btn btn-info btn-lg btn-next" onclick="nextCard()">Наступна</button>
 			</div>
 		</div>
 	</div>
+
+	<div id="form-container" class="container">
+		<div class="row text-center">
+			<h1>Заповнення власних карток</h1>
+		</div>
+		<div class="row">
+			<div class="col-12 col-sm-8 col-lg-6">
+				<input type="text" class="form-control" placeholder="Тема картки">
+			</div>
+			<div class="col-12 col-sm-4 col-lg-3">
+				<input type="number" class="form-control" placeholder="Номер">
+
+			</div>
+			<div class="col-12 col-lg-3">
+				<input type="text" class="form-control" placeholder="Дата">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12">
+				<input type="text" class="form-control form-control-lg" placeholder="Подія">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<button type="button" class="btn btn-warning btn-lg">Додати картку</button>
+			</div>
+			<div class="col-sm-6">
+				<button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#deleteAllCardsModal">Прибрати усі</button>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+	<!-- Modal -->
+	<div class="modal fade" id="deleteAllCardsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Видалити картки</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<p>Ви дійсно бажаєте видалити усі картки? Скасувати цю дію буде неможливо.</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Скасувати</button>
+					<button type="button" class="btn btn-danger">Видалити</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
 
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
@@ -63,4 +122,4 @@
 	<script src="js/animate.js"></script>
 	<script src="js/cards.js"></script>
 
-</html>
+	</html>
