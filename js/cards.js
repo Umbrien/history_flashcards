@@ -13,7 +13,7 @@ class Queue {
 		this.items = new Array()
 	}
 
-	is_empty() {
+	isEmpty() {
 		return this.items.length == 0
 	}
 
@@ -27,11 +27,11 @@ class Queue {
 		return this.items.pop()
 	}
 
-	delete_first() {
+	deleteFirst() {
 		this.items.shift()
 	}
 
-	print_queue() {
+	printQueue() {
 		console.log(this.items)
 	}
 }
@@ -63,7 +63,7 @@ function randomizeArr(list) {
 
 function nextCard() {
 	document.getElementById("removeCardButton").removeAttribute("disabled");
-	if (cardsQueue.is_empty()) {
+	if (cardsQueue.isEmpty()) {
 		document.getElementById("frontCardText").innerText = "Ви запам'ятали усі картки";
 		document.getElementById("backCardDate").innerText = "Ви запам'ятали усі картки"
 	}
@@ -83,7 +83,7 @@ function nextCard() {
 }
 
 function removeCard() {
-	cardsQueue.delete_first();
+	cardsQueue.deleteFirst();
 	nextCard()
 }
 
@@ -356,9 +356,13 @@ cardsArray = randomizeArr(cardsArray);
 
 cardsQueue = new Queue;
 
-cardsArray.forEach(function (item, i, cardsArray) {
-	item.theme = themesArray[item.theme]; //changes theme number to theme
-	cardsQueue.enqueue(item);
-});
+
+
+for (var i = 0; i < cardsArray.length; i++) {
+	cardsArray[i].theme = themesArray[cardsArray[i].theme];
+	cardsQueue.enqueue(cardsArray[i])
+}
+
+
 
 document.getElementById("h1-title").innerText = "Карток залишилось: " + cardsQueue.items.length;	

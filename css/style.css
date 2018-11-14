@@ -2,6 +2,7 @@
 
 	red - #f80c12;
 	orange - #ff9933
+	yellow - #d0c310
 	green - #69d025
 	blue - #12bdb9
 	darkBlue - #4444dd
@@ -111,6 +112,9 @@ body {
 
 #frontCardText {
 	font-size: 30px;
+	overflow: auto;
+	padding-top: 2rem;
+	height: 15rem;
 }
 
 #backCardDate {
@@ -187,6 +191,100 @@ button:hover {
 }
 
 
+
+
+
+/*****************************************/
+/**********		cards form		**********/
+/*****************************************/
+
+
+#form-container {
+	margin-top: 20rem;
+}
+
+#form-container .row div {
+	margin-top: 1rem;
+}
+
+
+
+
+
+
+/*************************************/
+/**********		table		**********/
+/*************************************/
+
+.table-dark {
+	background-color: #715e5e;
+	border-radius: 8px;
+	box-shadow: 0 6px 0 #4e4040;
+}
+
+tr {
+	border-color: red;
+}
+
+
+.bgRainbowRed {
+	background-color: #f80c12;
+}
+.bgRainbowOrange {
+	background-color: #ff9933;
+}
+.bgRainbowYellow {
+	background-color: #d0c310;
+}
+.bgRainbowGreen {
+	background-color: #69d025;
+}
+.bgRainbowBlue {
+	background-color: #12bdb9
+}
+.bgRainbowDarkBlue {
+	background-color: #4444dd;
+}
+.bgRainbowPurple {
+	background-color: #442299;
+}
+.bgRainbowCherry {
+	background-color: #9E1538;
+}
+.bgRainbowSmoky {
+	background-color: #7E7A7A;
+}
+.bgRainbowViolet {
+	background-color: #EA2AEC;
+}
+
+
+
+
+
+/*************************************/
+/**********		modal		**********/
+/*************************************/
+
+.modal {
+	color: #3c3c3c;
+}
+
+#deleteAllCardsModal {
+	color: #ff2929;
+}
+
+
+#infoButton {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	background-color: rgba(0,0,0,0);
+}
+
+
+
+
 @media only screen and (min-height: 750px) {
 	#first-container {
 		margin-top: 70px;
@@ -219,6 +317,10 @@ button:hover {
 		font-size: 15px;
 		width: 300px;
 	}
+	#infoButton {
+		top: 5px;
+		right: 0px;
+	}
 }
 
 @media screen and (max-width: 375px) {
@@ -239,87 +341,4 @@ button:hover {
 	#frontCardNumber, #backCardNumber {
 		font-size: 30px;
 	}
-}
-
-
-
-
-
-/*****************************************/
-/**********		cards form		**********/
-/*****************************************/
-
-
-#form-container {
-	margin-top: 20rem;
-}
-
-#form-container .row div {
-	margin-top: 1rem;
-}
-
-#deleteAllCardsModal {
-	color: #ff2929;
-}
-
-
-
-
-
-/*************************************/
-/**********		table		**********/
-/*************************************/
-
-.table-dark {
-	background-color: #715e5e;
-	border-color: #483c3c;
-	border-radius: 8px;
-	box-shadow: 0 6px 0 #4e4040;
-}
-
-
-/*
-
-	red - #f80c12;
-	orange - #ff9933
-	yellow - #d0c310
-	green - #69d025
-	blue - #12bdb9
-	darkBlue - #4444dd
-	purple - #442299
-	cherry - #9E1538
-	smoky - #7E7A7A
-	violet - #EA2AEC
-
-*/
-
-.bgRainbowRed {
-	background-color: #f80c12;
-}
-.bgRainbowOrange {
-	background-color: #ff9933;
-}
-.bgRainbowYellow {
-	background-color: #d0c310;
-}
-.bgRainbowGreen {
-	background-color: #69d025;
-}
-.bgRainbowBlue {
-	background-color: #12bdb9
-}
-.bgRainbowDarkBlue {
-	background-color: #4444dd;
-}
-.bgRainbowPurple {
-	background-color: #442299;
-}
-.bgRainbowCherry {
-	background-color: #9E1538;
-}
-.bgRainbowSmoky {
-	background-color: #7E7A7A;
-}
-.bgRainbowViolet {
-	background-color: #EA2AEC;
 }
