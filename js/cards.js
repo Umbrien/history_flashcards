@@ -113,6 +113,7 @@ function addCardFromForm() {
 
 	document.getElementById("removeCardButton").removeAttribute("disabled");
 	document.getElementById("nextCardButton").removeAttribute("disabled");
+	document.getElementById("h1-title").innerText = "Карток залишилось: " + cardsQueue.items.length;
 	document.getElementById("removeCardButton").style.display = "block";
 	document.getElementById("nextCardButton").style.display = "block"
 	document.getElementById("frontCardText").innerText = 'Натисніть "Наступна" для початку гри';
