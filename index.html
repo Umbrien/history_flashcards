@@ -15,6 +15,33 @@
 </head>
 
 <body>
+
+	<nav class="navbar navbar-expand-lg navbar-dark bg-brown">
+		<a class="navbar-brand" href="https://umbrien.github.io/history_flashcards">Картки</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav">
+				<li class="nav-item active">
+					<a class="nav-link" href="#first-container">Головна <span class="sr-only">(current)</span></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#form-container">Створення карток</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#tableDiv">Таблиця</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#themesModal" data-toggle="modal" data-target="#themesModal">Відсортувати за темою</a>
+				</li>
+				<li class="nav-item">
+					<button class="btn btn-outline-success my-2 my-sm-0" data-toggle="modal" data-target="#infoModal">?</button>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
 	<div id="first-container" class="container">
 		<div class="row">
 			<div class="col-sm">
@@ -88,7 +115,7 @@
 
 
 
-	<div class="container container-margin-bottom">
+	<div id="tableDiv" class="container container-margin-bottom">
 		<div class="row text-center bigHeaderDiv">
 			<h1 class="bigHeader">Таблиця з шифром</h1>
 		</div>
@@ -189,9 +216,38 @@
 	</div>
 
 
-	<button type="button" id="infoButton" class="btn btn-primary" data-toggle="modal" data-target="#infoModal">?</button>
-
 	<!-- Modal -->
+
+	<div class="modal fade" id="themesModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Теми</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<p>Тут можна зробити щоб у колоді залишились лише картки за однією темою.</p>
+					<br>
+					<ul>
+						<li>МЛН років тому - VII ст</li>
+						<li>Виникнення та розквіт  Київської Русі</li>
+						<li>Київська Русь за часів роздробленості. Галицько-Волинська держава</li>
+						<li>Політичний устрій, соціально-економічний, культурний розвиток Київської Русі та Галицько-Волинської держави в IX-XIV ст.</li>
+						<li>Українські землі у складі Великого князівства Литовського та інших держав (друга половина XIV – середина XVI ст.)</li>
+						<li>Українські землі під владою Речі Посполитої. Наростання національно визвольної боротьби українського народу</li>
+						<li>Національно-культурний рух (друга половина XVI –  перша половина XVII ст.)</li>
+						<li>Національно-визвольна війна українського народу  проти Речі Посполитої середини XVII ст.</li>
+						<li>Українські землі у другій половині ХVІІ ст.</li>
+						<li>Українські землі наприкінці XVII – у першій половині XVIII ст.</li>
+						<li>Українські землі в другій половині XVIII ст.</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
 	<div class="modal fade" id="deleteAllCardsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		<div class="modal-dialog modal-dialog-centered" role="document">
 			<div class="modal-content">

@@ -45,6 +45,17 @@ body {
 }
 
 
+/*************************************/
+/**********		navbar		**********/
+/*************************************/
+
+.bg-brown {
+	background-color: #4e3d3d!important;
+}
+
+
+
+
 
 /*************************************/
 /**********		cards		**********/
@@ -112,9 +123,6 @@ body {
 
 #frontCardText {
 	font-size: 30px;
-	overflow: auto;
-	padding-top: 2rem;
-	height: 15rem;
 }
 
 #backCardDate {
@@ -274,13 +282,6 @@ tr {
 	color: #ff2929;
 }
 
-
-#infoButton {
-	position: absolute;
-	top: 10px;
-	right: 10px;
-	background-color: rgba(0,0,0,0);
-}
 
 
 

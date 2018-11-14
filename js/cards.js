@@ -75,8 +75,8 @@ function nextCard() {
 	lastItem = cardsQueue.dequeue();
 	document.getElementById("frontCardTheme").innerText = lastItem.theme;
 	document.getElementById("backCardTheme").innerText = lastItem.theme;
-	document.getElementById("frontCardNumber").innerText = "#" + lastItem.number;
-	document.getElementById("backCardNumber").innerText = "#" + lastItem.number;
+	document.getElementById("frontCardNumber").innerText = "№" + lastItem.number;
+	document.getElementById("backCardNumber").innerText = "№" + lastItem.number;
 	document.getElementById("frontCardText").innerText = lastItem.text;
 	document.getElementById("backCardDate").innerText = lastItem.date;
 	cardsQueue.enqueue(lastItem)
@@ -119,7 +119,7 @@ function addCardFromForm() {
 
 	document.getElementById("removeCardButton").removeAttribute("disabled");
 	document.getElementById("nextCardButton").removeAttribute("disabled");
-	document.getElementById("h1-title").innerText = "Карток залишилось: " + cardsQueue.items.length;0
+	document.getElementById("h1-title").innerText = "Карток залишилось: " + cardsQueue.items.length;
 	document.getElementById("removeCardButton").style.display = "block";
 	document.getElementById("nextCardButton").style.display = "block"
 
