@@ -74,10 +74,10 @@ function nextCard() {
 	document.getElementById("h1-title").innerText = "Карток залишилось: " + cardsQueue.items.length;
 	lastItem = cardsQueue.dequeue();
 	document.getElementById("frontCardTheme").innerText = lastItem.theme;
-	document.getElementById("frontCardNumber").innerText = "#" + lastItem.number;
-	document.getElementById("frontCardText").innerText = lastItem.text;
 	document.getElementById("backCardTheme").innerText = lastItem.theme;
+	document.getElementById("frontCardNumber").innerText = "#" + lastItem.number;
 	document.getElementById("backCardNumber").innerText = "#" + lastItem.number;
+	document.getElementById("frontCardText").innerText = lastItem.text;
 	document.getElementById("backCardDate").innerText = lastItem.date;
 	cardsQueue.enqueue(lastItem)
 }
@@ -85,6 +85,39 @@ function nextCard() {
 function removeCard() {
 	cardsQueue.delete_first();
 	nextCard()
+}
+
+function removeAllCards() {
+	cardsQueue.items = [];
+	console.log(cardsQueue.items);
+	document.getElementById("removeCardButton").setAttribute("disabled", "disabled");
+	document.getElementById("nextCardButton").setAttribute("disabled", "disabled");
+	document.getElementById("h1-title").innerText = "";
+	document.getElementById("frontCardTheme").innerText = "";
+	document.getElementById("backCardTheme").innerText = "";
+	document.getElementById("frontCardNumber").innerText = "";
+	document.getElementById("backCardNumber").innerText = "";
+	document.getElementById("frontCardText").innerText = "Карток немає";
+	document.getElementById("backCardDate").innerText = "Додайте карток у чергу нижче"
+}
+
+function addCardFromForm() {
+	 
+
+	cardsQueue.enqueue(new cardMaker(
+		document.getElementById("inputCardTheme").value,
+		document.getElementById("inputCardNumber").value,
+		document.getElementById("inputCardDate").value,
+		document.getElementById("inputCardEvent").value
+		))
+
+	document.getElementById("removeCardButton").removeAttribute("disabled");
+	document.getElementById("nextCardButton").removeAttribute("disabled");
+	document.getElementById("removeCardButton").style.display = "block";
+	document.getElementById("nextCardButton").style.display = "block"
+	document.getElementById("frontCardText").innerText = 'Натисніть "Наступна" для початку гри';
+	document.getElementById("backCardDate").innerText = 'Натисніть "Наступна"'
+
 }
 
 
