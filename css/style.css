@@ -156,6 +156,11 @@ body {
 	height: 4rem;
 	font-size: 25px;
 }
+
+.btn-nav-indent {
+	margin-right: 13px;
+}
+
 .btn-success {
 	box-shadow: 0 5px 0 #1a791c;
 }
