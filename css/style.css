@@ -16,7 +16,7 @@
 
 body {
 	background-color: #322727;
-	color: #CCC;
+	color: #ccc;
 }
 
 .row {
@@ -94,7 +94,7 @@ body {
 	position: absolute;
 	bottom: 3px;
 	right: 19px;
-	font-size: 58px;
+	font-size: 23px;
 	color: rgba(74,74,74,.6);
 }
 
@@ -156,6 +156,12 @@ body {
 	height: 4rem;
 	font-size: 25px;
 }
+
+.btn-nav-indent {
+	margin-left: 7px;
+	margin-right: 7px;
+}
+
 .btn-success {
 	box-shadow: 0 5px 0 #1a791c;
 }
@@ -330,7 +336,7 @@ tr {
 		width: 230px;
 	}
 	#frontCardNumber, #backCardNumber {
-		font-size: 35px;
+		font-size: 20px;
 	}
 }
 
@@ -340,6 +346,6 @@ tr {
 		width: 200px;
 	}
 	#frontCardNumber, #backCardNumber {
-		font-size: 30px;
+		font-size: 17px;
 	}
 }

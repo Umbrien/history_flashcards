@@ -22,7 +22,7 @@
 			<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse" id="navbarNav">
-			<ul class="navbar-nav">
+			<ul class="navbar-nav mr-auto">
 				<li class="nav-item active">
 					<a class="nav-link" href="#first-container">Головна <span class="sr-only">(current)</span></a>
 				</li>
@@ -35,10 +35,12 @@
 				<li class="nav-item">
 					<a class="nav-link" href="#themesModal" data-toggle="modal" data-target="#themesModal">Відсортувати за темою</a>
 				</li>
-				<li class="nav-item">
-					<button class="btn btn-outline-success my-2 my-sm-0" data-toggle="modal" data-target="#infoModal">?</button>
-				</li>
 			</ul>
+			<span class="navbar-text">Авторизован як User</span>
+			<a href="login.php"><button class="btn btn-nav-indent btn-success my-2 my-sm-0">Увійти</button></a>
+			<a href="logout.php"><button class="btn btn-nav-indent btn-danger my-2 my-sm-0">Вийти</button></a>
+			<a href="sign_up.php"><button class="btn btn-nav-indent btn-outline-success my-2 my-sm-0">Зареєструватися</button></a>
+			<button class="btn btn-nav-indent btn-outline-success my-2 my-sm-0" data-toggle="modal" data-target="#infoModal">?</button>
 		</div>
 	</nav>
 
@@ -67,6 +69,9 @@
 						<h5 id="backCardTheme" class="card-title"></h5>
 						<h5 id="backCardNumber" class="card-title card-title-number"></h5>
 						<p id="backCardDate" class="card-text text-center">Натисніть "Наступна"</p>
+						<div class="card-footer">
+							Lorem ipsum dolor 
+						</div>
 					</div>
 				</div>
 			</div>
