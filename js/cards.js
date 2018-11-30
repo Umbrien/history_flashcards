@@ -102,12 +102,6 @@ function removeAllCards() {
 }
 
 
-
-
-function sortByTheme(themeIndex) {
-	alert("sorted maybe");
-}
-
 function addCardFromForm() {
 
 	cardsQueue.enqueue(new cardMaker(
@@ -363,7 +357,7 @@ function generateModalThemeList() {
 
 	var currentList = document.getElementById("modalThemeList").innerHTML;
 	for (var i = 0; i < themesArray.length; i++) {
-		document.getElementById("modalThemeList").innerHTML = currentList + '<li class="hover-blackout">'+ themesArray[i] +'</li>';
+		document.getElementById("modalThemeList").innerHTML = currentList + '<li class="hover-blackout" data-dismiss="modal" aria-label="Close" onclick="generateThemeArray(' + themesArray.indexOf(themesArray[i]) + ')">'+ themesArray[i] +'</li>';
 		currentList = document.getElementById("modalThemeList").innerHTML;
 	}
 
@@ -379,7 +373,7 @@ cardsQueue = new Queue;
 
 for (var i = 0; i < cardsArray.length; i++) {
 	cardsArray[i].theme = themesArray[cardsArray[i].theme];
-	cardsQueue.enqueue(cardsArray[i])
+	cardsQueue.enqueue(cardsArray[i]);
 }
 
 
