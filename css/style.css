@@ -287,6 +287,10 @@ tr {
 #deleteAllCardsModal {
 	color: #ff2929;
 }
+.hover-blackout:hover {
+	color: #000;
+	background-color: #ffd;
+}
 
 
 
