@@ -101,6 +101,16 @@ function removeAllCards() {
 	document.getElementById("backCardDate").innerText = "Додайте карток у чергу нижче"
 }
 
+function addToQueueAllCards() {
+	cardsQueue.items = [];
+	for (var i = 0; i < cardsArray.length; i++) {
+		cardsQueue.enqueue(cardsArray[i]);
+	}
+	nextCard();
+	document.getElementById("removeCardButton").style.display = "block";
+	document.getElementById("nextCardButton").style.display = "block"
+}
+
 
 function addCardFromForm() {
 

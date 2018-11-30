@@ -84,7 +84,7 @@
 				<button type="button" id="removeCardButton" class="btn btn-success btn-lg" onclick="removeCard()" disabled>Запам'ятав</button>
 			</div>
 			<div class="col-sm">
-				<button type="button" id="nextCardButton" class="btn btn-info btn-lg btn-next" onclick="nextCard()">Наступна</button>
+				<button type="button" id="nextCardButton" class="btn btn-info btn-lg" onclick="nextCard()">Наступна</button>
 			</div>
 		</div>
 	</div>
@@ -235,6 +235,7 @@
 				</div>
 				<div class="modal-body">
 					<p>Тут можна зробити щоб у колоді залишились лише картки за однією темою.</p>
+					<button type="button" class="btn btn-outline-danger btn-block" onclick="addToQueueAllCards()">Усі картки</button>
 					<br>
 					<ul id="modalThemeList"></ul>
 				</div>
