@@ -369,7 +369,20 @@ cardsArray = randomizeArr(cardsArray);
 
 cardsQueue = new Queue;
 
-
+function generateThemeArray(themeIndex) {
+	currentThemeArray = [];
+	cardsQueue.items = [];
+	for (var i = 0; i < cardsArray.length; i++) {
+		cardsArray[i].theme = themesArray.indexOf(cardsArray[i].theme)
+		if (cardsArray[i].theme == themeIndex) {
+			currentThemeArray.unshift(cardsArray[i])
+		}
+	}
+	for (var i = 0; i < currentThemeArray.length; i++) {
+	currentThemeArray[i].theme = themesArray[currentThemeArray[i].theme];
+	cardsQueue.enqueue(currentThemeArray[i]);
+}
+}
 
 for (var i = 0; i < cardsArray.length; i++) {
 	cardsArray[i].theme = themesArray[cardsArray[i].theme];
