@@ -357,7 +357,7 @@ function generateModalThemeList() {
 
 	var currentList = document.getElementById("modalThemeList").innerHTML;
 	for (var i = 0; i < themesArray.length; i++) {
-		document.getElementById("modalThemeList").innerHTML = currentList + '<li class="hover-blackout" data-dismiss="modal" aria-label="Close" onclick="generateThemeArray(' + themesArray.indexOf(themesArray[i]) + ')">'+ themesArray[i] +'</li>';
+		document.getElementById("modalThemeList").innerHTML = currentList + '<li class="hover-blackout" data-dismiss="modal" aria-label="Close" onclick="sortCardsByTheme(' + themesArray.indexOf(themesArray[i]) + ')">'+ themesArray[i] +'</li>';
 		currentList = document.getElementById("modalThemeList").innerHTML;
 	}
 
@@ -368,7 +368,7 @@ generateModalThemeList();
 cardsArray = randomizeArr(cardsArray);
 cardsQueue = new Queue;
 
-function generateThemeArray(themeIndex) {
+function sortCardsByTheme(themeIndex) {
 	currentThemeArray = [];
 	cardsQueue.items = [];
 	for (var i = 0; i < cardsArray.length; i++) {
@@ -377,7 +377,9 @@ function generateThemeArray(themeIndex) {
 	for (var i = 0; i < currentThemeArray.length; i++) {
 		cardsQueue.enqueue(currentThemeArray[i]);
 	}
-	nextCard()
+	nextCard();
+	document.getElementById("removeCardButton").style.display = "block";
+	document.getElementById("nextCardButton").style.display = "block"
 }
 
 for (var i = 0; i < cardsArray.length; i++) {
