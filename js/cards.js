@@ -101,6 +101,13 @@ function removeAllCards() {
 	document.getElementById("backCardDate").innerText = "Додайте карток у чергу нижче"
 }
 
+
+
+
+function sortByTheme(themeIndex) {
+	alert("sorted maybe");
+}
+
 function addCardFromForm() {
 
 	cardsQueue.enqueue(new cardMaker(
@@ -108,7 +115,7 @@ function addCardFromForm() {
 		document.getElementById("inputCardNumber").value,
 		document.getElementById("inputCardDate").value,
 		document.getElementById("inputCardEvent").value
-		))
+		));
 
 	cardsQueue.items = randomizeArr(cardsQueue.items);
 
@@ -339,7 +346,7 @@ new cardMaker(10, 209, "1753 р.", "Утворення Слов'яно-Серб�
 ];
 
 themesArray = [
-"",
+"МЛН років тому - VII ст",
 "Виникнення та розквіт  Київської Русі",
 "Київська Русь за часів роздробленості. Галицько-Волинська держава",
 "Політичний устрій, соціально-економічний, культурний розвиток Київської Русі та Галицько-Волинської держави в IX-XIV ст.",
@@ -351,6 +358,18 @@ themesArray = [
 "Українські землі наприкінці XVII – у першій половині XVIII ст.",
 "Українські землі в другій половині XVIII ст."
 ];
+
+function generateModalThemeList() {
+
+	var currentList = document.getElementById("modalThemeList").innerHTML;
+	for (var i = 0; i < themesArray.length; i++) {
+		document.getElementById("modalThemeList").innerHTML = currentList + '<li class="hover-blackout">'+ themesArray[i] +'</li>';
+		currentList = document.getElementById("modalThemeList").innerHTML;
+	}
+
+}
+
+generateModalThemeList();
 
 cardsArray = randomizeArr(cardsArray);
 
