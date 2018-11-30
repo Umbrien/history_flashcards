@@ -8,6 +8,16 @@ function changeH1TitleDescriptionDisplay() {
 	}
 }
 
+function changeCardsDisplay(isShown) {
+	if (isShown) {
+		document.getElementById("removeCardButton").style.display = "block";
+		document.getElementById("nextCardButton").style.display = "block"
+	} else {
+		document.getElementById("removeCardButton").style.display = "none";
+		document.getElementById("nextCardButton").style.display = "none"
+	}
+}
+
 class Queue {
 	constructor() {
 		this.items = new Array()
@@ -67,10 +77,7 @@ function nextCard() {
 		document.getElementById("frontCardText").innerText = "Ви запам'ятали усі картки";
 		document.getElementById("backCardDate").innerText = "Ви запам'ятали усі картки"
 	}
-	else if (cardsQueue.items.length == 1) {
-		document.getElementById("removeCardButton").style.display = "none";
-		document.getElementById("nextCardButton").style.display = "none"
-	}
+	else if (cardsQueue.items.length == 1) changeCardsDisplay(0);
 	document.getElementById("h1-title").innerText = "Карток залишилось: " + cardsQueue.items.length;
 	lastItem = cardsQueue.dequeue();
 	document.getElementById("frontCardTheme").innerText = lastItem.theme;
@@ -101,6 +108,16 @@ function removeAllCards() {
 	document.getElementById("backCardDate").innerText = "Додайте карток у чергу нижче"
 }
 
+function addToQueueAllCards() {
+	cardsQueue.items = [];
+	for (var i = 0; i < cardsArray.length; i++) {
+		cardsQueue.enqueue(cardsArray[i]);
+	}
+	nextCard();
+	changeCardsDisplay(1)
+}
+
+
 function addCardFromForm() {
 
 	cardsQueue.enqueue(new cardMaker(
@@ -108,7 +125,7 @@ function addCardFromForm() {
 		document.getElementById("inputCardNumber").value,
 		document.getElementById("inputCardDate").value,
 		document.getElementById("inputCardEvent").value
-		))
+		));
 
 	cardsQueue.items = randomizeArr(cardsQueue.items);
 
@@ -120,8 +137,7 @@ function addCardFromForm() {
 	document.getElementById("removeCardButton").removeAttribute("disabled");
 	document.getElementById("nextCardButton").removeAttribute("disabled");
 	document.getElementById("h1-title").innerText = "Карток залишилось: " + cardsQueue.items.length;
-	document.getElementById("removeCardButton").style.display = "block";
-	document.getElementById("nextCardButton").style.display = "block"
+	changeCardsDisplay(1)
 
 }
 
@@ -339,7 +355,7 @@ new cardMaker(10, 209, "1753 р.", "Утворення Слов'яно-Серб�
 ];
 
 themesArray = [
-"",
+"МЛН років тому - VII ст",
 "Виникнення та розквіт  Київської Русі",
 "Київська Русь за часів роздробленості. Галицько-Волинська держава",
 "Політичний устрій, соціально-економічний, культурний розвиток Київської Русі та Галицько-Волинської держави в IX-XIV ст.",
@@ -352,15 +368,37 @@ themesArray = [
 "Українські землі в другій половині XVIII ст."
 ];
 
-cardsArray = randomizeArr(cardsArray);
+function generateModalThemeList() {
 
+	var currentList = document.getElementById("modalThemeList").innerHTML;
+	for (var i = 0; i < themesArray.length; i++) {
+		document.getElementById("modalThemeList").innerHTML = currentList + '<li class="hover-blackout" data-dismiss="modal" aria-label="Close" onclick="sortCardsByTheme(' + themesArray.indexOf(themesArray[i]) + ')">'+ themesArray[i] +'</li>';
+		currentList = document.getElementById("modalThemeList").innerHTML;
+	}
+
+}
+
+generateModalThemeList();
+
+cardsArray = randomizeArr(cardsArray);
 cardsQueue = new Queue;
 
-
+function sortCardsByTheme(themeIndex) {
+	currentThemeArray = [];
+	cardsQueue.items = [];
+	for (var i = 0; i < cardsArray.length; i++) {
+		if ( themesArray.indexOf(cardsArray[i].theme) == themeIndex) currentThemeArray.unshift(cardsArray[i])
+	}
+	for (var i = 0; i < currentThemeArray.length; i++) {
+		cardsQueue.enqueue(currentThemeArray[i]);
+	}
+	nextCard();
+	changeCardsDisplay(1)
+}
 
 for (var i = 0; i < cardsArray.length; i++) {
 	cardsArray[i].theme = themesArray[cardsArray[i].theme];
-	cardsQueue.enqueue(cardsArray[i])
+	cardsQueue.enqueue(cardsArray[i]);
 }
 
 
