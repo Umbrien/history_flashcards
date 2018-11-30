@@ -8,6 +8,16 @@ function changeH1TitleDescriptionDisplay() {
 	}
 }
 
+function changeCardsDisplay(isShown) {
+	if (isShown) {
+		document.getElementById("removeCardButton").style.display = "block";
+		document.getElementById("nextCardButton").style.display = "block"
+	} else {
+		document.getElementById("removeCardButton").style.display = "none";
+		document.getElementById("nextCardButton").style.display = "none"
+	}
+}
+
 class Queue {
 	constructor() {
 		this.items = new Array()
@@ -67,10 +77,7 @@ function nextCard() {
 		document.getElementById("frontCardText").innerText = "Ви запам'ятали усі картки";
 		document.getElementById("backCardDate").innerText = "Ви запам'ятали усі картки"
 	}
-	else if (cardsQueue.items.length == 1) {
-		document.getElementById("removeCardButton").style.display = "none";
-		document.getElementById("nextCardButton").style.display = "none"
-	}
+	else if (cardsQueue.items.length == 1) changeCardsDisplay(0);
 	document.getElementById("h1-title").innerText = "Карток залишилось: " + cardsQueue.items.length;
 	lastItem = cardsQueue.dequeue();
 	document.getElementById("frontCardTheme").innerText = lastItem.theme;
@@ -107,8 +114,7 @@ function addToQueueAllCards() {
 		cardsQueue.enqueue(cardsArray[i]);
 	}
 	nextCard();
-	document.getElementById("removeCardButton").style.display = "block";
-	document.getElementById("nextCardButton").style.display = "block"
+	changeCardsDisplay(1)
 }
 
 
@@ -131,8 +137,7 @@ function addCardFromForm() {
 	document.getElementById("removeCardButton").removeAttribute("disabled");
 	document.getElementById("nextCardButton").removeAttribute("disabled");
 	document.getElementById("h1-title").innerText = "Карток залишилось: " + cardsQueue.items.length;
-	document.getElementById("removeCardButton").style.display = "block";
-	document.getElementById("nextCardButton").style.display = "block"
+	changeCardsDisplay(1)
 
 }
 
@@ -388,8 +393,7 @@ function sortCardsByTheme(themeIndex) {
 		cardsQueue.enqueue(currentThemeArray[i]);
 	}
 	nextCard();
-	document.getElementById("removeCardButton").style.display = "block";
-	document.getElementById("nextCardButton").style.display = "block"
+	changeCardsDisplay(1)
 }
 
 for (var i = 0; i < cardsArray.length; i++) {
