@@ -372,7 +372,7 @@ function generateModalThemeList() {
 
 	var currentList = document.getElementById("modalThemeList").innerHTML;
 	for (var i = 0; i < themesArray.length; i++) {
-		document.getElementById("modalThemeList").innerHTML = currentList + '<li class="hover-blackout" data-dismiss="modal" aria-label="Close" onclick="sortCardsByTheme(' + themesArray.indexOf(themesArray[i]) + ')">'+ themesArray[i] +'</li>';
+		document.getElementById("modalThemeList").innerHTML = currentList + '<li class="hover-blackout" data-dismiss="modal" onclick="sortCardsByTheme(' + themesArray.indexOf(themesArray[i]) + ')">'+ themesArray[i] +'</li>';
 		currentList = document.getElementById("modalThemeList").innerHTML;
 	}
 
@@ -387,11 +387,9 @@ function sortCardsByTheme(themeIndex) {
 	currentThemeArray = [];
 	cardsQueue.items = [];
 	for (var i = 0; i < cardsArray.length; i++) {
-		if ( themesArray.indexOf(cardsArray[i].theme) == themeIndex) currentThemeArray.unshift(cardsArray[i])
+		if (themesArray.indexOf(cardsArray[i].theme) == themeIndex) currentThemeArray.unshift(cardsArray[i])
 	}
-	for (var i = 0; i < currentThemeArray.length; i++) {
-		cardsQueue.enqueue(currentThemeArray[i]);
-	}
+	for (var i = 0; i < currentThemeArray.length; i++) cardsQueue.enqueue(currentThemeArray[i]);
 	nextCard();
 	changeCardsDisplay(1)
 }

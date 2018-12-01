@@ -19,6 +19,10 @@ body {
 	color: #ccc;
 }
 
+.color-white {
+	color: #fff;
+}
+
 .row {
 	margin-top: 1rem;
 }
@@ -160,6 +164,11 @@ body {
 .btn-nav-indent {
 	margin-left: 7px;
 	margin-right: 7px;
+}
+
+.btn-margin-top-bottom {
+	margin-top: 1rem;
+	margin-bottom: 1rem;
 }
 
 .btn-success {

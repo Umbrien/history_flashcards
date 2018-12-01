@@ -69,7 +69,7 @@
 						<h5 id="backCardTheme" class="card-title"></h5>
 						<h5 id="backCardNumber" class="card-title card-title-number"></h5>
 						<p id="backCardDate" class="card-text text-center">Натисніть "Наступна"</p>
-						<div class="card-footer">
+						<div class="card-footer" data-toggle="modal" data-target="#changeCardCipherModal">
 							Lorem ipsum dolor
 						</div>
 					</div>
@@ -224,87 +224,213 @@
 
 	<!-- Modal -->
 
-	<div class="modal fade" id="themesModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		<div class="modal-dialog modal-dialog-centered" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel">Теми</h5>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<div class="modal-body">
-					<p>Тут можна зробити щоб у колоді залишились лише картки за однією темою.</p>
-					<button type="button" class="btn btn-outline-danger btn-block" onclick="addToQueueAllCards()">Усі картки</button>
-					<br>
-					<ul id="modalThemeList"></ul>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div class="modal fade" id="deleteAllCardsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		<div class="modal-dialog modal-dialog-centered" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel">Видалити картки</h5>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<div class="modal-body">
-					<p>Ви дійсно бажаєте видалити усі картки? Скасувати цю дію буде неможливо.</p>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-dismiss="modal">Скасувати</button>
-					<button type="button" class="btn btn-danger" data-dismiss="modal" onclick="removeAllCards()">Видалити</button>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+	<div class="modal" id="changeCardCipherModal" tabindex="-1" role="dialog">
 		<div class="modal-dialog modal-lg" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title">Додаткова інформація</h5>
+					<h5 class="modal-title">Додавання шифру</h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
 				<div class="modal-body">
-					<h5>Над проектом працювали:</h5>
-					<br>
-					<ul>
-						<h5>Прогамування: </h5>
-						<ul>
-							<li>Олексій Пітенко</li>
-							<li>Сергій Калугін</li>
-						</ul>
-						<br>
-						<h5>Наповняли картки: </h5>
-						<ul>
-							<li>Ольга Жулінська</li>
-							<li>Микита від Ярика</li>
-						</ul>
-					</ul>
-					<br>
-					<h5>Справка користувача: </h5>
-					<p>Треба нажати на карточку щоби вона обернулась, також можна створювати власні картки.</p>
+					<p>1955 - Джобс Народився</p>
+					<input type="text" class="form-control" placeholder="Ваш шифр">
+					<div class="container">
+						<div class="row">
+							<div class="col-sm">
+								<button type="button" class="btn btn-success btn-block btn-margin-top-bottom" data-dismiss="modal">Додати шифр</button>
+							</div>
+							<div class="col-sm">
+								<div class="dropdown dropright">
+									<button class="btn btn-info btn-block btn-margin-top-bottom dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Користувацькі шифри</button>
+									<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+										<a class="dropdown-item" href="#">Шифр 1</a>
+										<a class="dropdown-item" href="#">Shifr 2</a>
+										<a class="dropdown-item" href="#">lorem3</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<table class="table table-responsive-lg">
+						<thead>
+							<tr>
+								<th scope="col">#</th>
+								<th scope="col">Код кольору</th>
+								<th scope="col">Прикметник</th>
+								<th scope="col">Суб'єкт</th>
+								<th scope="col">Дія</th>
+								<th scope="col">Об'єкт</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row" class="bgRainbowRed color-white">0</th>
+								<td>Чарівна</td>
+								<td class="bgRainbowRed color-white">Червоний</td>
+								<td>Чаклун</td>
+								<td>Чекає</td>
+								<td>Човен</td>
+							</tr>
+							<tr>
+								<th scope="row" class="bgRainbowOrange">1</th>
+								<td>Пташка</td>
+								<td class="bgRainbowOrange">Помаранчевий</td>
+								<td>Папуга</td>
+								<td>Перебирає</td>
+								<td>Просо</td>
+							</tr>
+							<tr>
+								<th scope="row" class="bgRainbowYellow">2</th>
+								<td>Життя</td>
+								<td class="bgRainbowYellow">Жовтий</td>
+								<td>Жан</td>
+								<td>Жує</td>
+								<td>Жупан</td>
+							</tr>
+							<tr>
+								<th scope="row" class="bgRainbowGreen">3</th>
+								<td>Звеселяє</td>
+								<td class="bgRainbowGreen">Зелений</td>
+								<td>Змій</td>
+								<td>Зварив</td>
+								<td>Зілля</td>
+							</tr>
+							<tr>
+								<th scope="row" class="bgRainbowBlue">4</th>
+								<td>бо</td>
+								<td class="bgRainbowBlue">Блакитний</td>
+								<td>Баран</td>
+								<td>б'є в</td>
+								<td>Барабан</td>
+							</tr>
+							<tr>
+								<th scope="row" class="bgRainbowDarkBlue color-white">5</th>
+								<td>Співає</td>
+								<td class="bgRainbowDarkBlue color-white">Синій</td>
+								<td>Султан</td>
+								<td>Сушить</td>
+								<td>Сарафан</td>
+							</tr>
+							<tr>
+								<th scope="row" class="bgRainbowPurple color-white">6</th>
+								<td>Файно</td>
+								<td class="bgRainbowPurple color-white">Філолетова</td>
+								<td>Фея</td>
+								<td>Фарширує</td>
+								<td>Форель</td>
+							</tr>
+							<tr>
+								<th scope="row" class="bgRainbowCherry color-white">7</th>
+								<td>Всім</td>
+								<td class="bgRainbowCherry color-white">Вишневі</td>
+								<td>Верблюд</td>
+								<td>Взуває</td>
+								<td>Валянки</td>
+							</tr>
+							<tr>
+								<th scope="row" class="bgRainbowSmoky color-white">8</th>
+								<td>Добрим</td>
+								<td class="bgRainbowSmoky color-white">Димчастого</td>
+								<td>Дога</td>
+								<td>Дражнить</td>
+								<td>Дуремар</td>
+							</tr>
+							<tr>
+								<th scope="row" class="bgRainbowViolet color-white">9</th>
+								<td>Людям</td>
+								<td class="bgRainbowViolet color-white">Ліловий</td>
+								<td>Лілінгут</td>
+								<td>Лиже</td>
+								<td>Льодяник</td>
+							</tr>
+						</tbody>
+					</table>
 				</div>
 			</div>
 		</div>
-	</div>
 
-	
+		<div class="modal fade" id="themesModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">Теми</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<p>Тут можна зробити щоб у колоді залишились лише картки за однією темою.</p>
+						<button type="button" data-dismiss="modal" class="btn btn-outline-danger btn-block btn-margin-top-bottom" onclick="addToQueueAllCards()">Усі картки</button>
+						<ul id="modalThemeList"></ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="modal fade" id="deleteAllCardsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">Видалити картки</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<p>Ви дійсно бажаєте видалити усі картки? Скасувати цю дію буде неможливо.</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Скасувати</button>
+						<button type="button" class="btn btn-danger" data-dismiss="modal" onclick="removeAllCards()">Видалити</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+			<div class="modal-dialog modal-lg" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title">Додаткова інформація</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<h5>Над проектом працювали:</h5>
+						<br>
+						<ul>
+							<h5>Прогамування: </h5>
+							<ul>
+								<li>Олексій Пітенко</li>
+								<li>Сергій Калугін</li>
+							</ul>
+							<br>
+							<h5>Наповняли картки: </h5>
+							<ul>
+								<li>Ольга Жулінська</li>
+								<li>Нікіта Галайко</li>
+							</ul>
+						</ul>
+						<br>
+						<h5>Справка користувача: </h5>
+						<p>Треба нажати на карточку щоби вона обернулась, також можна створювати власні картки.</p>
+					</div>
+				</div>
+			</div>
+		</div>
 
 
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
-	<script src="js/anime.min.js"></script>
-	<script src="js/animate.js"></script>
-	<script src="js/cards.js"></script>
 
-	</html>
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+		<script src="js/anime.min.js"></script>
+		<script src="js/animate.js"></script>
+		<script src="js/cards.js"></script>
+
+		</html>
