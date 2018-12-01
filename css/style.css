@@ -19,6 +19,10 @@ body {
 	color: #ccc;
 }
 
+.color-white {
+	color: #fff;
+}
+
 .row {
 	margin-top: 1rem;
 }
@@ -30,6 +34,10 @@ body {
 
 #h1-title-description {
 	display: none;
+}
+
+.m-top-3 {
+	margin-top: 3rem;
 }
 
 .bigHeader {
@@ -162,6 +170,11 @@ body {
 	margin-right: 7px;
 }
 
+.btn-margin-top-bottom {
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+}
+
 .btn-success {
 	box-shadow: 0 5px 0 #1a791c;
 }
@@ -282,6 +295,11 @@ tr {
 
 .modal {
 	color: #3c3c3c;
+}
+
+.community-cipher-wrapper {
+	height: 500px;
+	overflow: auto;
 }
 
 #deleteAllCardsModal {

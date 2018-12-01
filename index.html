@@ -70,16 +70,13 @@
 						<h5 id="backCardTheme" class="card-title"></h5>
 						<h5 id="backCardNumber" class="card-title card-title-number"></h5>
 						<p id="backCardDate" class="card-text text-center">Натисніть "Наступна"</p>
-						<div class="card-footer">
+						<div class="card-footer" data-toggle="modal" data-target="#changeCardCipherModal">
 							Lorem ipsum dolor
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-
-	<div class="container">
 		<div class="row button-row">
 			<div class="col-sm">
 				<button type="button" id="removeCardButton" class="btn btn-success btn-lg" onclick="removeCard()" disabled>Запам'ятав</button>
@@ -89,6 +86,7 @@
 			</div>
 		</div>
 	</div>
+
 
 	<div id="form-container" class="container container-margin-bottom">
 		<div class="row text-center bigHeaderDiv">
@@ -225,6 +223,193 @@
 
 	<!-- Modal -->
 
+	<div class="modal" id="changeCardCipherModal" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Додавання шифру</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<h4>1955 - Джобс Народився</h4>
+					<input type="text" class="form-control" placeholder="Ваш шифр">
+					<button type="button" class="btn btn-success btn-block btn-margin-top-bottom" data-dismiss="modal">Додати шифр</button>
+					<table class="table table-responsive-lg">
+						<thead>
+							<tr>
+								<th scope="col">#</th>
+								<th scope="col">Код кольору</th>
+								<th scope="col">Прикметник</th>
+								<th scope="col">Суб'єкт</th>
+								<th scope="col">Дія</th>
+								<th scope="col">Об'єкт</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row" class="bgRainbowRed color-white">0</th>
+								<td>Чарівна</td>
+								<td class="bgRainbowRed color-white">Червоний</td>
+								<td>Чаклун</td>
+								<td>Чекає</td>
+								<td>Човен</td>
+							</tr>
+							<tr>
+								<th scope="row" class="bgRainbowOrange">1</th>
+								<td>Пташка</td>
+								<td class="bgRainbowOrange">Помаранчевий</td>
+								<td>Папуга</td>
+								<td>Перебирає</td>
+								<td>Просо</td>
+							</tr>
+							<tr>
+								<th scope="row" class="bgRainbowYellow">2</th>
+								<td>Життя</td>
+								<td class="bgRainbowYellow">Жовтий</td>
+								<td>Жан</td>
+								<td>Жує</td>
+								<td>Жупан</td>
+							</tr>
+							<tr>
+								<th scope="row" class="bgRainbowGreen">3</th>
+								<td>Звеселяє</td>
+								<td class="bgRainbowGreen">Зелений</td>
+								<td>Змій</td>
+								<td>Зварив</td>
+								<td>Зілля</td>
+							</tr>
+							<tr>
+								<th scope="row" class="bgRainbowBlue">4</th>
+								<td>бо</td>
+								<td class="bgRainbowBlue">Блакитний</td>
+								<td>Баран</td>
+								<td>б'є в</td>
+								<td>Барабан</td>
+							</tr>
+							<tr>
+								<th scope="row" class="bgRainbowDarkBlue color-white">5</th>
+								<td>Співає</td>
+								<td class="bgRainbowDarkBlue color-white">Синій</td>
+								<td>Султан</td>
+								<td>Сушить</td>
+								<td>Сарафан</td>
+							</tr>
+							<tr>
+								<th scope="row" class="bgRainbowPurple color-white">6</th>
+								<td>Файно</td>
+								<td class="bgRainbowPurple color-white">Філолетова</td>
+								<td>Фея</td>
+								<td>Фарширує</td>
+								<td>Форель</td>
+							</tr>
+							<tr>
+								<th scope="row" class="bgRainbowCherry color-white">7</th>
+								<td>Всім</td>
+								<td class="bgRainbowCherry color-white">Вишневі</td>
+								<td>Верблюд</td>
+								<td>Взуває</td>
+								<td>Валянки</td>
+							</tr>
+							<tr>
+								<th scope="row" class="bgRainbowSmoky color-white">8</th>
+								<td>Добрим</td>
+								<td class="bgRainbowSmoky color-white">Димчастого</td>
+								<td>Дога</td>
+								<td>Дражнить</td>
+								<td>Дуремар</td>
+							</tr>
+							<tr>
+								<th scope="row" class="bgRainbowViolet color-white">9</th>
+								<td>Людям</td>
+								<td class="bgRainbowViolet color-white">Ліловий</td>
+								<td>Лілінгут</td>
+								<td>Лиже</td>
+								<td>Льодяник</td>
+							</tr>
+						</tbody>
+					</table>
+					<h4 class="m-top-3 text-center">Користувацькі шифри</h4>
+					<div class="community-cipher-wrapper">
+						<div class="list-group">
+							<a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+								<div class="d-flex w-100 justify-content-between">
+									<small class="text-muted">Стів Джобс</small>
+									<small>3 дні назад</small>
+								</div>
+								<p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+							</a>
+							<a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+								<div class="d-flex w-100 justify-content-between">
+									<small class="text-muted">Білл Гейтс</small>
+									<small class="text-muted">7 днів назад</small>
+								</div>
+								<p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+							</a>
+							<a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+								<div class="d-flex w-100 justify-content-between">
+									<small class="text-muted">Лінус Торвальдс</small>
+									<small class="text-muted">2 роки назад</small>
+								</div>
+								<p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+							</a>
+							<a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+								<div class="d-flex w-100 justify-content-between">
+									<small class="text-muted">Стів Джобс</small>
+									<small>3 дні назад</small>
+								</div>
+								<p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+							</a>
+							<a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+								<div class="d-flex w-100 justify-content-between">
+									<small class="text-muted">Білл Гейтс</small>
+									<small class="text-muted">7 днів назад</small>
+								</div>
+								<p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+							</a>
+							<a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+								<div class="d-flex w-100 justify-content-between">
+									<small class="text-muted">Лінус Торвальдс</small>
+									<small class="text-muted">2 роки назад</small>
+								</div>
+								<p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+							</a>
+							<a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+								<div class="d-flex w-100 justify-content-between">
+									<small class="text-muted">Стів Джобс</small>
+									<small>3 дні назад</small>
+								</div>
+								<p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+							</a>
+							<a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+								<div class="d-flex w-100 justify-content-between">
+									<small class="text-muted">Білл Гейтс</small>
+									<small class="text-muted">7 днів назад</small>
+								</div>
+								<p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+							</a>
+							<a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+								<div class="d-flex w-100 justify-content-between">
+									<small class="text-muted">Лінус Торвальдс</small>
+									<small class="text-muted">2 роки назад</small>
+								</div>
+								<p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+							</a>
+							<a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+								<div class="d-flex w-100 justify-content-between">
+									<small class="text-muted">Стів Джобс</small>
+									<small>3 дні назад</small>
+								</div>
+								<p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+							</a>
+						</div>	
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
 	<div class="modal fade" id="themesModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		<div class="modal-dialog modal-dialog-centered" role="document">
 			<div class="modal-content">
@@ -236,8 +421,7 @@
 				</div>
 				<div class="modal-body">
 					<p>Тут можна зробити щоб у колоді залишились лише картки за однією темою.</p>
-					<button type="button" class="btn btn-outline-danger btn-block" onclick="addToQueueAllCards()">Усі картки</button>
-					<br>
+					<button type="button" data-dismiss="modal" class="btn btn-outline-danger btn-block btn-margin-top-bottom" onclick="addToQueueAllCards()">Усі картки</button>
 					<ul id="modalThemeList"></ul>
 				</div>
 			</div>
@@ -286,7 +470,7 @@
 						<h5>Наповняли картки: </h5>
 						<ul>
 							<li>Ольга Жулінська</li>
-							<li>Микита від Ярика</li>
+							<li>Нікіта Галайко</li>
 						</ul>
 					</ul>
 					<br>
@@ -297,7 +481,7 @@
 		</div>
 	</div>
 
-	
+
 
 
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -307,5 +491,5 @@
 	<script src="js/anime.min.js"></script>
 	<script src="js/animate.js"></script>
 	<script src="js/cards.js"></script>
-
-	</html>
+</body>
+</html>
