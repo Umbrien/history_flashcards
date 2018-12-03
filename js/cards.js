@@ -46,12 +46,27 @@ class Queue {
 	}
 }
 
-function cardMaker(theme, number, date, text, cipher) {
+function cardMaker(
+	theme,
+	number,
+	date,
+	text,
+	cipher,
+	frontImgIsPresent,
+	backImgIsPresent,
+	frontImgPath, 
+	backImgPath
+	)
+{
 	this.theme = theme;
 	this.number = number;
 	this.date = date;
 	this.text = text;
-	this.cipher = cipher
+	this.cipher = cipher;
+	this.frontImgIsPresent = frontImgIsPresent;
+	this.backImgIsPresent = backImgIsPresent;
+	this.frontImgPath = frontImgPath;
+	this.backImgPath = backImgPath
 }
 
 function randomInteger(min, max) {

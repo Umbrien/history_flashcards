@@ -88,8 +88,17 @@ body {
 	border: none;
 }
 
+.card-body {
+	text-align: center;
+}
+
 .card-body p {
 	line-height: 1;
+}
+
+.card-body img {
+	width: 20rem;
+	height: 15rem;
 }
 
 .card-title {
@@ -122,6 +131,11 @@ body {
 	justify-content: center;
 	align-items: center;
 	backface-visibility: hidden;
+}
+
+#frontCardTheme,
+#backCardTheme {
+	text-align: left;
 }
 
 .front {
