@@ -46,11 +46,12 @@ class Queue {
 	}
 }
 
-function cardMaker(theme, number, date, text) {
+function cardMaker(theme, number, date, text, cipher) {
 	this.theme = theme;
 	this.number = number;
 	this.date = date;
-	this.text = text
+	this.text = text;
+	this.cipher = cipher
 }
 
 function randomInteger(min, max) {
@@ -86,7 +87,19 @@ function nextCard() {
 	document.getElementById("backCardNumber").innerText = "№" + lastItem.number;
 	document.getElementById("frontCardText").innerText = lastItem.text;
 	document.getElementById("backCardDate").innerText = lastItem.date;
-	cardsQueue.enqueue(lastItem)
+	if(document.getElementById("cardCipherDiv").innerText == "undefined" || lastItem.cipher == undefined) {
+		document.getElementById("cardCipherDiv").innerText = "Редагувати шифр"
+	} else {
+		document.getElementById("cardCipherDiv").innerText = lastItem.cipher;
+	}
+	cardsQueue.enqueue(lastItem);
+
+	document.getElementById("changeCardCipherModalDate").innerText = lastItem.date
+}
+
+function addCipherToYourself() {
+	lastItem.cipher = document.getElementById("cipherInput").value;
+	document.getElementById("cardCipherDiv").innerText = lastItem.cipher;
 }
 
 function removeCard() {

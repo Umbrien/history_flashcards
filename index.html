@@ -70,9 +70,7 @@
 						<h5 id="backCardTheme" class="card-title"></h5>
 						<h5 id="backCardNumber" class="card-title card-title-number"></h5>
 						<p id="backCardDate" class="card-text text-center">Натисніть "Наступна"</p>
-						<div class="card-footer" data-toggle="modal" data-target="#changeCardCipherModal">
-							Lorem ipsum dolor
-						</div>
+						<div class="card-footer text-center" id="cardCipherDiv" data-toggle="modal" data-target="#changeCardCipherModal"></div>
 					</div>
 				</div>
 			</div>
@@ -228,14 +226,29 @@
 			<div class="modal-content">
 				<div class="modal-header">
 					<h5 class="modal-title">Додавання шифру</h5>
+					<div class="dropdown dropright">
+						<button class="btn btn-warning btn-sm dropdown-toggle" type="button" id="modalTableDropdownButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Схема кодування</button>
+						<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+							<a class="dropdown-item" href="#">Схема 1</a>
+							<a class="dropdown-item" href="#">Схема 2</a>
+							<a class="dropdown-item" href="#">Схема 3</a>
+						</div>
+					</div>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
 				<div class="modal-body">
-					<h4>1955 - Джобс Народився</h4>
-					<input type="text" class="form-control" placeholder="Ваш шифр">
-					<button type="button" class="btn btn-success btn-block btn-margin-top-bottom" data-dismiss="modal">Додати шифр</button>
+					<h4 id="changeCardCipherModalDate"></h4>
+					<input type="text" class="form-control" id="cipherInput" placeholder="Ваш шифр">
+					<div class="row">
+						<div class="col-sm-6">
+							<button type="button" class="btn btn-success btn-block btn-margin-top-bottom" data-dismiss="modal" onclick="addCipherToYourself()">Додати шифр собі</button>
+						</div>
+						<div class="col-sm-6">
+							<button type="button" class="btn btn-info btn-block btn-margin-top-bottom" data-dismiss="modal" disabled>також запропонувати</button>
+						</div>
+					</div>
 					<table class="table table-responsive-lg">
 						<thead>
 							<tr>
@@ -481,6 +494,11 @@
 		</div>
 	</div>
 
+	<footer class="footer">
+      <div class="container text-center">
+        <p class="mt-5 mb-3 text-muted">&copy; 2017 - 2018 PINKER:tone</p>
+      </div>
+    </footer>
 
 
 
