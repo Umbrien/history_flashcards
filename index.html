@@ -77,10 +77,10 @@
 		</div>
 		<div class="row button-row">
 			<div class="col-sm">
-				<button type="button" id="removeCardButton" class="btn btn-success btn-lg" onclick="removeCard()" disabled>Запам'ятав</button>
+				<button type="button" id="removeCardButton" class="btn btn-success btn-lg" onclick="removeCard(cardsQueue)" disabled>Запам'ятав</button>
 			</div>
 			<div class="col-sm">
-				<button type="button" id="nextCardButton" class="btn btn-info btn-lg" onclick="nextCard()">Наступна</button>
+				<button type="button" id="nextCardButton" class="btn btn-info btn-lg" onclick="nextCard(cardsQueue)">Наступна</button>
 			</div>
 		</div>
 	</div>
@@ -108,7 +108,7 @@
 		</div>
 		<div class="row">
 			<div class="col-sm-6">
-				<button type="button" class="btn btn-warning btn-lg" onclick="addCardFromForm()">Додати картку</button>
+				<button type="button" class="btn btn-warning btn-lg" onclick="addCardFromForm(cardsQueue)">Додати картку</button>
 			</div>
 			<div class="col-sm-6">
 				<button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#deleteAllCardsModal">Прибрати усі</button>
@@ -434,7 +434,7 @@
 				</div>
 				<div class="modal-body">
 					<p>Тут можна зробити щоб у колоді залишились лише картки за однією темою.</p>
-					<button type="button" data-dismiss="modal" class="btn btn-outline-danger btn-block btn-margin-top-bottom" onclick="addToQueueAllCards()">Усі картки</button>
+					<button type="button" data-dismiss="modal" class="btn btn-outline-danger btn-block btn-margin-top-bottom" onclick="addToQueueAllCards(cardsQueue)">Усі картки</button>
 					<ul id="modalThemeList"></ul>
 				</div>
 			</div>
@@ -455,7 +455,7 @@
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-secondary" data-dismiss="modal">Скасувати</button>
-					<button type="button" class="btn btn-danger" data-dismiss="modal" onclick="removeAllCards()">Видалити</button>
+					<button type="button" class="btn btn-danger" data-dismiss="modal" onclick="removeAllCards(cardsQueue)">Видалити</button>
 				</div>
 			</div>
 		</div>
@@ -478,7 +478,7 @@
 							<li>Олексій Пітенко</li>
 							<li>Сергій Калугін</li>
 						</ul>
-						<h5>Наповняли картки: 346456</h5>
+						<h5>Наповняли картки: </h5>
 						<ul>
 							<li>Ольга Жулінська</li>
 							<li>Нікіта Галайко</li>

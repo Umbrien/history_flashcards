@@ -72,15 +72,15 @@ function randomizeArr(list) {
 	return l
 }
 
-function nextCard() {
+function nextCard(queue) {
 	document.getElementById("removeCardButton").removeAttribute("disabled");
-	if (cardsQueue.isEmpty()) {
+	if (queue.isEmpty()) {
 		document.getElementById("frontCardText").innerText = "Ви запам'ятали усі картки";
 		document.getElementById("backCardDate").innerText = "Ви запам'ятали усі картки"
 	}
-	else if (cardsQueue.items.length == 1) changeCardsDisplay(0);
-	document.getElementById("h1-title").innerText = "Карток залишилось: " + cardsQueue.items.length;
-	lastItem = cardsQueue.dequeue();
+	else if (queue.items.length == 1) changeCardsDisplay(0);
+	document.getElementById("h1-title").innerText = "Карток залишилось: " + queue.items.length;
+	lastItem = queue.dequeue();
 	document.getElementById("frontCardTheme").innerText = lastItem.theme;
 	document.getElementById("backCardTheme").innerText = lastItem.theme;
 	document.getElementById("frontCardNumber").innerText = "№" + lastItem.number;
@@ -92,7 +92,7 @@ function nextCard() {
 	} else {
 		document.getElementById("cardCipherDiv").innerText = lastItem.cipher;
 	}
-	cardsQueue.enqueue(lastItem);
+	queue.enqueue(lastItem);
 
 	document.getElementById("changeCardCipherModalDate").innerText = lastItem.date
 }
@@ -102,14 +102,13 @@ function addCipherToYourself() {
 	document.getElementById("cardCipherDiv").innerText = lastItem.cipher;
 }
 
-function removeCard() {
-	cardsQueue.deleteFirst();
-	nextCard()
+function removeCard(queue) {
+	queue.deleteFirst();
+	nextCard(queue)
 }
 
-function removeAllCards() {
-	cardsQueue.items = [];
-	console.log(cardsQueue.items);
+function removeAllCards(queue) {
+	queue.items = [];
 	document.getElementById("removeCardButton").setAttribute("disabled", "disabled");
 	document.getElementById("nextCardButton").setAttribute("disabled", "disabled");
 	document.getElementById("h1-title").innerText = "";
@@ -121,26 +120,26 @@ function removeAllCards() {
 	document.getElementById("backCardDate").innerText = "Додайте карток у чергу нижче"
 }
 
-function addToQueueAllCards() {
-	cardsQueue.items = [];
+function addToQueueAllCards(queue) {
+	queue.items = [];
 	for (var i = 0; i < cardsArray.length; i++) {
-		cardsQueue.enqueue(cardsArray[i]);
+		queue.enqueue(cardsArray[i]);
 	}
-	nextCard();
+	nextCard(queue);
 	changeCardsDisplay(1)
 }
 
 
-function addCardFromForm() {
+function addCardFromForm(queue) {
 
-	cardsQueue.enqueue(new cardMaker(
+	queue.enqueue(new cardMaker(
 		document.getElementById("inputCardTheme").value,
 		document.getElementById("inputCardNumber").value,
 		document.getElementById("inputCardDate").value,
 		document.getElementById("inputCardEvent").value
 		));
 
-	cardsQueue.items = randomizeArr(cardsQueue.items);
+	queue.items = randomizeArr(queue.items);
 
 	if(document.getElementById("frontCardText").innerText == "Карток немає" || document.getElementById("backCardDate").innerText == "Додайте карток у чергу нижче") {
 		document.getElementById("frontCardText").innerText = 'Натисніть "Наступна" для початку гри';
@@ -149,7 +148,7 @@ function addCardFromForm() {
 
 	document.getElementById("removeCardButton").removeAttribute("disabled");
 	document.getElementById("nextCardButton").removeAttribute("disabled");
-	document.getElementById("h1-title").innerText = "Карток залишилось: " + cardsQueue.items.length;
+	document.getElementById("h1-title").innerText = "Карток залишилось: " + queue.items.length;
 	changeCardsDisplay(1)
 
 }
@@ -387,7 +386,7 @@ function generateModalThemeList() {
 
 	var currentList = document.getElementById("modalThemeList").innerHTML;
 	for (var i = 0; i < themesArray.length; i++) {
-		document.getElementById("modalThemeList").innerHTML = currentList + '<li class="hover-blackout" data-dismiss="modal" onclick="sortCardsByTheme(' + themesArray.indexOf(themesArray[i]) + ')">'+ themesArray[i] +'</li>';
+		document.getElementById("modalThemeList").innerHTML = currentList + '<li class="hover-blackout" data-dismiss="modal" onclick="sortCardsByTheme(' + themesArray.indexOf(themesArray[i]) + ', cardsQueue)">'+ themesArray[i] +'</li>';
 		currentList = document.getElementById("modalThemeList").innerHTML;
 	}
 
@@ -398,14 +397,14 @@ generateModalThemeList();
 cardsArray = randomizeArr(cardsArray);
 cardsQueue = new Queue;
 
-function sortCardsByTheme(themeIndex) {
+function sortCardsByTheme(themeIndex, queue) {
 	currentThemeArray = [];
-	cardsQueue.items = [];
+	queue.items = [];
 	for (var i = 0; i < cardsArray.length; i++) {
 		if (themesArray.indexOf(cardsArray[i].theme) == themeIndex) currentThemeArray.unshift(cardsArray[i])
 	}
-	for (var i = 0; i < currentThemeArray.length; i++) cardsQueue.enqueue(currentThemeArray[i]);
-	nextCard();
+	for (var i = 0; i < currentThemeArray.length; i++) queue.enqueue(currentThemeArray[i]);
+	nextCard(queue);
 	changeCardsDisplay(1)
 }
 
