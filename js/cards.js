@@ -1,4 +1,4 @@
-function changeCardsDisplay(isShown) {
+function changeCardButtonsDisplay(isShown) {
 	if (isShown) {
 		document.getElementById("removeCardButton").style.display = "block";
 		document.getElementById("nextCardButton").style.display = "block";
@@ -68,7 +68,7 @@ function nextCard(queue) {
 		document.getElementById("frontCardText").innerText = "Ви запам'ятали усі картки";
 		document.getElementById("backCardDate").innerText = "Ви запам'ятали усі картки";
 	}
-	else if (queue.items.length == 1) changeCardsDisplay(0);
+	else if (queue.items.length == 1) changeCardButtonsDisplay(0);
 
 	document.getElementById("h1-title").innerText = "Карток залишилось: " + queue.items.length;
 	lastItem = queue.dequeue();
@@ -118,7 +118,7 @@ function addToQueueAllCards(queue) {
 		queue.enqueue(cardsArray[i]);
 	}
 	nextCard(queue);
-	changeCardsDisplay(1);
+	changeCardButtonsDisplay(1);
 }
 
 
@@ -141,7 +141,7 @@ function addCardFromForm(queue) {
 	document.getElementById("removeCardButton").removeAttribute("disabled");
 	document.getElementById("nextCardButton").removeAttribute("disabled");
 	document.getElementById("h1-title").innerText = "Карток залишилось: " + queue.items.length;
-	changeCardsDisplay(1);
+	changeCardButtonsDisplay(1);
 
 }
 
@@ -397,7 +397,7 @@ function sortCardsByTheme(themeIndex, queue) {
 	}
 	for (var i = 0; i < currentThemeArray.length; i++) queue.enqueue(currentThemeArray[i]);
 	nextCard(queue);
-	changeCardsDisplay(1);
+	changeCardButtonsDisplay(1);
 }
 
 for (var i = 0; i < cardsArray.length; i++) {
