@@ -54,7 +54,7 @@ function randomizeArr(list) {
 	l = [];
 	h = 0;
 	iter = list.length;
-	for (i = 0; i < iter; i++) {
+	for (var i = 0; i < iter; i++) {
 		h = randomInteger(0, list.length - 1);
 		l.push(list[h]);
 		list.splice(h, 1);
@@ -387,7 +387,7 @@ function generateModalThemeList() {
 generateModalThemeList();
 
 cardsArray = randomizeArr(cardsArray);
-cardsQueue = new Queue;
+cardsQueue = new Queue();
 
 function sortCardsByTheme(themeIndex, queue) {
 	currentThemeArray = [];
@@ -395,7 +395,9 @@ function sortCardsByTheme(themeIndex, queue) {
 	for (var i = 0; i < cardsArray.length; i++) {
 		if (themesArray.indexOf(cardsArray[i].theme) == themeIndex) currentThemeArray.unshift(cardsArray[i]);
 	}
-	for (var i = 0; i < currentThemeArray.length; i++) queue.enqueue(currentThemeArray[i]);
+	for (var i = 0; i < currentThemeArray.length; i++) {
+		queue.enqueue(currentThemeArray[i]);
+	}
 	nextCard(queue);
 	changeCardButtonsDisplay(1);
 }
