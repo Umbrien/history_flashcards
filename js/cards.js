@@ -93,7 +93,7 @@ function nextCard(queue) {
 }
 
 function addCipherToYourself() {
-	lastItem.cipher = $("#cipherInput")[0].value;
+	lastItem.cipher = $("#cipherInput").val();
 	$("#cardCipherDiv").text(lastItem.cipher);
 }
 
@@ -128,10 +128,10 @@ function addToQueueAllCards(queue) {
 function addCardFromForm(queue) {
 
 	queue.enqueue( new cardMaker(
-		$("#inputCardTheme")[0].value,
-		$("#inputCardNumber")[0].value,
-		$("#inputCardDate")[0].value,
-		$("#inputCardEvent")[0].value
+		$("#inputCardTheme").val(),
+		$("#inputCardNumber").val(),
+		$("#inputCardDate").val(),
+		$("#inputCardEvent").val()
 		) );
 
 	queue.items = randomizeArr(queue.items);
