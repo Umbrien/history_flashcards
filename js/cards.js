@@ -65,7 +65,7 @@ function randomizeArr(list) {
 }
 
 function nextCard(queue) {
-	$("#removeCardButton")[0].removeAttribute("disabled");
+	$("#removeCardButton").removeAttr("disabled");
 
 	if (queue.isEmpty()) {
 		$("#frontCardText").text("Ви запам'ятали усі картки");
@@ -76,8 +76,15 @@ function nextCard(queue) {
 	lastItem = queue.dequeue();
 	$("#frontCardTheme").text(lastItem.theme);
 	$("#backCardTheme").text(lastItem.theme);
-	$("#frontCardNumber").text("№" + lastItem.number);
-	$("#backCardNumber").text("№" + lastItem.number);
+
+	if (lastItem.theme != "") {
+		$("#frontCardNumber").text("№" + lastItem.number);
+		$("#backCardNumber").text("№" + lastItem.number);
+	} else {
+		$("#frontCardNumber").text("");
+		$("#backCardNumber").text("");
+	}
+
 	$("#frontCardText").text(lastItem.text);
 	$("#backCardDate").text(lastItem.date);
 
@@ -104,8 +111,8 @@ function removeCard(queue) {
 
 function removeAllCards(queue) {
 	queue.items = [];
-	$("#removeCardButton")[0].setAttribute("disabled", "disabled");
-	$("#nextCardButton")[0].setAttribute("disabled", "disabled");
+	$("#removeCardButton").attr("disabled", "disabled");
+	$("#nextCardButton").attr("disabled", "disabled");
 	$("#h1-title").text("");
 	$("#frontCardTheme").text("");
 	$("#backCardTheme").text("");
@@ -144,8 +151,8 @@ function addCardFromForm(queue) {
 
 	}
 
-	$("#removeCardButton")[0].removeAttribute("disabled");
-	$("#nextCardButton")[0].removeAttribute("disabled");
+	$("#removeCardButton").removeAttr("disabled");
+	$("#nextCardButton").removeAttr("disabled");
 	$("#h1-title").text("Карток залишилось: " + queue.items.length);
 	changeCardButtonsDisplay(1);
 
