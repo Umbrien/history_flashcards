@@ -77,7 +77,7 @@ function nextCard(queue) {
 	$("#frontCardTheme").text(lastItem.theme);
 	$("#backCardTheme").text(lastItem.theme);
 
-	if (lastItem.theme != "") {
+	if (lastItem.number != "") {
 		$("#frontCardNumber").text("№" + lastItem.number);
 		$("#backCardNumber").text("№" + lastItem.number);
 	} else {
