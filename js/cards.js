@@ -41,9 +41,9 @@ function randomInteger(min, max) {
 }
 
 function randomizeArr(list) {
-	l = [];
-	h = 0;
-	iter = list.length;
+	var l = [];
+	var h = 0;
+	var iter = list.length;
 
 	for (var i = 0; i < iter; i++) {
 		h = randomInteger(0, list.length - 1);
@@ -86,8 +86,8 @@ function nextCard(queue) {
 	} else {
 		$("#cardCipherDiv").text(lastItem.cipher);
 	}
-	queue.enqueue(lastItem);
 
+	queue.enqueue(lastItem);
 	$("#changeCardCipherModalDate").text(lastItem.date);
 }
 
@@ -116,9 +116,11 @@ function removeAllCards(queue) {
 
 function addToQueueAllCards(queue) {
 	queue.items = [];
+
 	for (var i = 0; i < cardsArray.length; i++) {
 		queue.enqueue(cardsArray[i]);
 	}
+
 	nextCard(queue);
 	$(".gameBtn").show();
 }
@@ -132,7 +134,6 @@ function addCardFromForm(queue) {
 		$("#inputCardDate").val(),
 		$("#inputCardEvent").val()
 		) );
-
 	queue.items = randomizeArr(queue.items);
 
 	if( $("#frontCardText").text() == "Карток немає" ||
@@ -147,7 +148,6 @@ function addCardFromForm(queue) {
 	$("#nextCardButton").removeAttr("disabled");
 	$("#h1-title").text("Карток залишилось: " + queue.items.length);
 	$(".gameBtn").show();
-
 }
 
 
@@ -380,10 +380,8 @@ themesArray = [
 ];
 
 function generateModalThemeList() {
-
 	var currentList = $("#modalThemeList").html();
 	for (var i = 0; i < themesArray.length; i++) {
-
 		$("#modalThemeList").html( currentList +
 		'<li class="hover-blackout" data-dismiss="modal" onclick="sortCardsByTheme(' +
 		themesArray.indexOf(themesArray[i]) +
@@ -391,16 +389,14 @@ function generateModalThemeList() {
 
 		currentList = $("#modalThemeList").html();
 	}
-
 }
 
 generateModalThemeList();
-
 cardsArray = randomizeArr(cardsArray);
 cardsQueue = new Queue();
 
 function sortCardsByTheme(themeIndex, queue) {
-	currentThemeArray = [];
+	var currentThemeArray = [];
 	queue.items = [];
 
 	for (var i = 0; i < cardsArray.length; i++) {
