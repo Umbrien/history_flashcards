@@ -1,13 +1,3 @@
-function changeCardButtonsDisplay(isShown) {
-	if (isShown) {
-		$("#removeCardButton").show();
-		$("#nextCardButton").show();
-	} else {
-		$("#removeCardButton").hide();
-		$("#nextCardButton").hide();
-	}
-}
-
 class Queue {
 	constructor() {
 		this.items = new Array();
@@ -70,7 +60,9 @@ function nextCard(queue) {
 	if (queue.isEmpty()) {
 		$("#frontCardText").text("Ви запам'ятали усі картки");
 		$("#backCardDate").text("Ви запам'ятали усі картки");
-	} else if (queue.items.length == 1) changeCardButtonsDisplay(0);
+	} else if (queue.items.length == 1) {
+		$(".gameBtn").hide();
+	}
 
 	$("#h1-title").text("Карток залишилось: " + queue.items.length);
 	lastItem = queue.dequeue();
@@ -128,7 +120,7 @@ function addToQueueAllCards(queue) {
 		queue.enqueue(cardsArray[i]);
 	}
 	nextCard(queue);
-	changeCardButtonsDisplay(1);
+	$(".gameBtn").show();
 }
 
 
@@ -154,7 +146,7 @@ function addCardFromForm(queue) {
 	$("#removeCardButton").removeAttr("disabled");
 	$("#nextCardButton").removeAttr("disabled");
 	$("#h1-title").text("Карток залишилось: " + queue.items.length);
-	changeCardButtonsDisplay(1);
+	$(".gameBtn").show();
 
 }
 
@@ -422,7 +414,7 @@ function sortCardsByTheme(themeIndex, queue) {
 	}
 
 	nextCard(queue);
-	changeCardButtonsDisplay(1);
+	$(".gameBtn").show();
 }
 
 for (var i = 0; i < cardsArray.length; i++) {
