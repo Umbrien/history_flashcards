@@ -1,29 +1,27 @@
-class Queue {
-	constructor() {
-		this.items = new Array();
-	}
+var Queue = function() {
+	this.items = [];
+}
 
-	isEmpty() {
-		return this.items.length == 0;
-	}
+Queue.prototype.isEmpty = function() {
+	return this.items.length == 0;
+}
 
-	//добавляет в начало
-	enqueue(item) {
-		this.items.unshift(item);
-	}
+//добавляет в начало
+Queue.prototype.enqueue = function(item) {
+	this.items.unshift(item);
+}
 
-	//удаляет из конца и возращает
-	dequeue() {
-		return this.items.pop();
-	}
+//удаляет из конца и возращает
+Queue.prototype.dequeue = function() {
+	return this.items.pop();
+}
 
-	deleteFirst() {
-		this.items.shift();
-	}
+Queue.prototype.deleteFirst = function() {
+	this.items.shift();
+}
 
-	printQueue() {
-		console.log(this.items);
-	}
+Queue.prototype.printQueue = function() {
+	console.log(this.items);
 }
 
 function cardMaker(theme, number, date, text, cipher) {
