@@ -1,28 +1,28 @@
-var Queue = function() {
+var Queue = function () {
 	this.items = [];
-}
+};
 
 Queue.prototype.isEmpty = function() {
-	return this.items.length == 0;
-}
+	return this.items.length === 0;
+};
 
 //добавляет в начало
 Queue.prototype.enqueue = function(item) {
 	this.items.unshift(item);
-}
+};
 
 //удаляет из конца и возращает
 Queue.prototype.dequeue = function() {
 	return this.items.pop();
-}
+};
 
 Queue.prototype.deleteFirst = function() {
 	this.items.shift();
-}
+};
 
 Queue.prototype.printQueue = function() {
 	console.log(this.items);
-}
+};
 
 function CardMaker(theme, number, date, text, cipher) {
 	this.theme = theme;
@@ -58,7 +58,7 @@ function nextCard(queue) {
 	if (queue.isEmpty()) {
 		$("#frontCardText").text("Ви запам'ятали усі картки");
 		$("#backCardDate").text("Ви запам'ятали усі картки");
-	} else if (queue.items.length == 1) {
+	} else if (queue.items.length === 1) {
 		$(".gameBtn").hide();
 	}
 
@@ -67,7 +67,7 @@ function nextCard(queue) {
 	$("#frontCardTheme").text(lastItem.theme);
 	$("#backCardTheme").text(lastItem.theme);
 
-	if (lastItem.number != "") {
+	if (lastItem.number !== "") {
 		$("#frontCardNumber").text("№" + lastItem.number);
 		$("#backCardNumber").text("№" + lastItem.number);
 	} else {
@@ -78,8 +78,8 @@ function nextCard(queue) {
 	$("#frontCardText").text(lastItem.text);
 	$("#backCardDate").text(lastItem.date);
 
-	if( $("#cardCipherDiv").text() == "undefined" ||
-		lastItem.cipher == undefined) {
+	if( $("#cardCipherDiv").text() === "undefined" ||
+		lastItem.cipher === undefined) {
 		$("#cardCipherDiv").text("Редагувати шифр");
 	} else {
 		$("#cardCipherDiv").text(lastItem.cipher);
@@ -134,8 +134,8 @@ function addCardFromForm(queue) {
 		) );
 	queue.items = randomizeArr(queue.items);
 
-	if( $("#frontCardText").text() == "Карток немає" ||
-		$("#backCardDate").text() == "Додайте карток у чергу нижче" ) {
+	if( $("#frontCardText").text() === "Карток немає" ||
+		$("#backCardDate").text() === "Додайте карток у чергу нижче" ) {
 
 		$("#frontCardText").text('Натисніть "Наступна" для початку гри');
 		$("#backCardDate").text('Натисніть "Наступна"');
@@ -398,7 +398,7 @@ function sortCardsByTheme(themeIndex, queue) {
 	queue.items = [];
 
 	for (var i = 0; i < cardsArray.length; i++) {
-		if (themesArray.indexOf(cardsArray[i].theme) == themeIndex) {
+		if (themesArray.indexOf(cardsArray[i].theme) === themeIndex) {
 			currentThemeArray.unshift(cardsArray[i]);
 		}
 	}
